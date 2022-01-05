@@ -6,7 +6,11 @@
 - (Mar.2011 ~ Mar.2017) Hallym University, Bachelor of Public Administration
 
 # Interest
-- Data Analysis, ML, Data Visualization and so on...
+- what about this?
+  - Effiecient way to analyze Data
+
+- how about this?
+  - Is it possible to analyze someone's own personality?    
 
 # Project
 - (Oct.2021 ~ Dec. 2021) 스마트치안 빅데이터 수원센터 구축
