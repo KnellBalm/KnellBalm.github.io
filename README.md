@@ -21,8 +21,9 @@
                         데이터 분석 및 시각화, 플랫폼 운영지원
 
 # Certification
-- (Feb.2021) Computer Specialist in Spreadsheet & Database Level-1
 - (Mar.2022) ADsP(Advanced Data Analytics Semi-Professional)
+- (Feb.2021) Computer Specialist in Spreadsheet & Database Level-1
+
 
 
 
