@@ -30,6 +30,9 @@
 - [수원시 카드소비 분석](https://data.suwon.go.kr:20006/studio-new/exported/5485343fcdae4b4ca2be249745d036653c59315563304bbfb84f5832a879fea1)
 - [수원시 인구 분석](https://data.suwon.go.kr:20006/studio-new/exported/3cf1d8d8e7154b13bde55b28422a847d9ead8061fd1548c9b954be2d3d153a6d)
 - 수원시 통합사례관리 대상자 데이터 분석
+- 무인단속장비 설치 효과성 분석
+- PC학과/장내기능/도로주행 시험 문항 연관성 분석
+  
 
 # Certification
 - (Mar.2022) ADsP(Advanced Data Analytics Semi-Professional)
