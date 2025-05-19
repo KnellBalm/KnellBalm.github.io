@@ -1,5 +1,5 @@
 # Career
-- (Sep.2021 ~ Present) Mobigen, DX-Dev.1 Team Data Analyst
+- (Sep.2021 ~ Present) Mobigen, DX-Dev.1 Team Data Scientist
 
 # Education
 - (Mar.2017 ~ Aug.2019) Sogang University, Master of Political Science 
