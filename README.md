@@ -14,24 +14,16 @@
 #### <img src="https://img.shields.io/badge/GeoPandas-150458?style=social&logo=geopandas&logoColor=139C5A"/>  
 #### <img src="https://img.shields.io/badge/scikit learn-150458?style=social&logo=scikit-learn&logoColor=150458"/>  
 
-### WorkSpace 
-#### <img src= "https://img.shields.io/badge/Work%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter"/> [Main]
-#### <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"/>
-#### <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252"/>
+### WorkSpace IDLE
+#### [Main] <img src= "https://img.shields.io/badge/Work%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter"/> [For Source] <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"/> [For Co-work] <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252"/> 
 
 
 ## DataBase
-### <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
- - Use PostGis
-
-### <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white"/> 
- - Distributed Database based on sqlite
-### <img src = "https://img.shields.io/badge/Apache Spark-E25A1C?style=for-the-badge&logo=apache spark&logoColor=white"/>
+### [RDB+ PostGis] <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/> 
+### [Distributed Database based on sqlite] <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white"/> 
 
 ## OS
-### <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/>
-### <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"/>
-### <img src="https://img.shields.io/badge/Cent%20OS-262577?style=for-the-badge&logo=CentOS&logoColor=white"/>
+### <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"/> <img src="https://img.shields.io/badge/Cent%20OS-262577?style=for-the-badge&logo=CentOS&logoColor=white"/>
 
 ## Workflow
 ### <img src = "https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white"/>
@@ -44,8 +36,7 @@
   - Visualize
   - Developing DashBoard
   - DashBoard Web-Service
-### <img src = "https://img.shields.io/badge/MS PowerPoint-B7472A?style=for-the-badge&logo=Microsoft powerpoint&logoColor=white"/>
-### <img src = "https://img.shields.io/badge/MS Excel-217346?style=for-the-badge&logo=Microsoft excel&logoColor=white"/>
+### MS Office (PowerPoint + Excel)
 
 
 
