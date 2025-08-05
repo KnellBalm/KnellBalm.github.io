@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의 데이터 사이언스 포트폴리오</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 기본 스타일 및 변수 --- */
+        :root {
+            --primary-color: #2c3e50; /* 네이비 */
+            --secondary-color: #3498db; /* 블루 */
+            --background-color: #f4f7f6;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --light-gray: #ecf0f1;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        h2 {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- 헤더 (Hero) 섹션 --- */
+        .hero {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+        .hero .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        .hero .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* --- 공통 카드 스타일 --- */
+        .card {
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        /* --- 기술 스택 (Skills) 섹션 --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .skill-category h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-category li {
+            background-color: var(--light-gray);
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* --- 프로젝트 (Projects) 섹션 --- */
+        .project-card h3 {
+            margin-bottom: 15px;
+        }
+        .project-summary {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .project-details ul {
+            padding-left: 20px;
+        }
+        .tags {
+            margin-top: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 15px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .project-links a {
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        /* --- 경력 (Experience) & 학력 (Education) 섹션 --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--secondary-color);
+        }
+        .timeline-item:not(:last-child) {
+            padding-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 2px solid white;
+        }
+        .timeline-item h3 { margin-bottom: 5px; }
+        .timeline-item .period {
+            font-weight: bold;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        
+        /* --- 푸터 --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: var(--primary-color);
+            color: var(--light-gray);
+        }
+
+        /* --- 반응형 디자인 --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .container { padding: 15px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1></h1>
+        <p class="subtitle">데이터를 통해 가치를 창출하는 데이터 사이언티스트</p>
+        <p>비즈니스 문제를 데이터 기반으로 정의하고, 머신러닝과 통계 모델을 활용하여<br>실질적인 비즈니스 임팩트를 만드는 일에 열정을 가지고 있습니다.</p>
+        <div class="social-links">
+            <a href="" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="" target="_blank" title="Tech Blog"><i class="fa-solid fa-blog"></i></a>
+            <a href="mailto:" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="skills" class="card">
+            <h2><i class="fa-solid fa-cogs"></i> 기술 스택 (Skills)</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Data Handling</h3>
+                    <ul>
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                        <li>R (Dplyr, Ggplot2)</li>
+                        <li>SQL (PostgreSQL, MySQL, BigQuery)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning & Deep Learning</h3>
+                    <ul>
+                        <li>TensorFlow, Keras, PyTorch</li>
+                        <li>XGBoost, LightGBM</li>
+                        <li>NLP (Hugging Face Transformers)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li>Matplotlib, Seaborn, Plotly</li>
+                        <li>Tableau, Looker Studio</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>MLOps & Cloud</h3>
+                    <ul>
+                        <li>Docker, Git, GitHub Actions</li>
+                        <li>AWS (S3, SageMaker, EC2)</li>
+                        <li>GCP (BigQuery, Vertex AI)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projects">
+            <h2><i class="fa-solid fa-flask-vial"></i> 주요 프로젝트 (Projects)</h2>
+            
+            <div class="project-card card">
+                <h3>고객 이탈 예측 모델링 및 서빙 시스템 구축</h3>
+                <p class="project-summary">구독 서비스의 고객 이탈 방지를 위해, 머신러닝 모델을 개발하고 배치 서빙 파이프라인을 구축하여 마케팅팀의 타겟 캠페인 효율을 증대시킨 프로젝트</p>
+                <div class="project-details">
+                    <ul>
+                        <li><strong>문제 정의:</strong> 월별 고객 이탈률이 증가하여 비즈니스 손실 발생. 이탈 가능성이 높은 고객을 사전에 예측하여 선제적 대응 필요.</li>
+                        <li><strong>데이터:</strong> 고객 인구통계 정보, 서비스 사용 로그, 결제 내역, 고객센터 문의 내역 등 (약 100만 명 데이터)</li>
+                        <li><strong>분석 및 모델링:</strong>
+                            <ul>
+                                <li>EDA를 통해 이탈 그룹과 유지 그룹의 주요 특징 차이 분석 (e.g., 특정 기능 사용 빈도, 결제 주기).</li>
+                                <li>LightGBM과 Logistic Regression 모델 성능 비교, 최종적으로 LightGBM 채택 (AUC 0.88).</li>
+                                <li>SHAP를 활용하여 모델의 예측 결과를 해석하고, 주요 이탈 요인 시각화 및 리포팅.</li>
+                            </ul>
+                        </li>
+                        <li><strong>결과 및 기여:</strong>
+                            <ul>
+                                <li>이탈 예측 모델 기반 타겟 쿠폰 발송 캠페인 진행, 이전 대비 **캠페인 ROI 15% 증가**.</li>
+                                <li>Airflow와 Docker를 이용한 일일 배치 예측 시스템 구축으로 **운영 리소스 자동화**.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">LightGBM</span>
+                    <span class="tag">SHAP</span><span class="tag">SQL</span><span class="tag">Airflow</span><span class="tag">Docker</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-file-alt"></i> 상세 리포트</a>
+                </div>
+            </div>
+
+            <div class="project-card card">
+                <h3>자연어 처리를 이용한 상품 리뷰 긍/부정 분석 및 토픽 모델링</h3>
+                <p class="project-summary">이커머스 사이트의 수십만 개 상품 리뷰 텍스트를 분석하여 상품별 주요 긍/부정 키워드를 추출하고, 고객의 목소리(VOC)를 정량적으로 파악할 수 있는 대시보드를 구축</p>
+                 <div class="project-details">
+                    <ul>
+                        <li><strong>문제 정의:</strong> 매일 쏟아지는 리뷰를 수동으로 확인하기 어려워 고객 불만 사항에 대한 신속한 대응이 힘든 상황. 리뷰 데이터에서 인사이트를 자동 추출할 필요.</li>
+                        <li><strong>데이터:</strong> 상품 리뷰 텍스트 데이터 (약 50만 건), 별점 데이터.</li>
+                        <li><strong>분석 및 모델링:</strong>
+                            <ul>
+                                <li>KoNLPy를 이용한 한국어 형태소 분석 및 전처리.</li>
+                                <li>BERT 기반의 사전 학습 모델(e.g., KoBERT)을 Fine-tuning하여 긍/부정 분류 모델 개발 (정확도 92%).</li>
+                                <li>LDA(잠재 디리클레 할당) 토픽 모델링을 통해 리뷰의 주요 주제(e.g., '배송', '품질', '가격')를 클러스터링.</li>
+                            </ul>
+                        </li>
+                        <li><strong>결과 및 기여:</strong>
+                            <ul>
+                                <li>Tableau를 이용해 상품별 긍/부정 리뷰 비율, 주요 키워드를 시각화한 **VOC 대시보드 개발**.</li>
+                                <li>상품 기획팀(MD)이 대시보드를 통해 **상품 개선 아이디어 5건 발굴**.</li>
+                                <li>부정 리뷰 급증 상품을 자동 감지하는 알림 시스템의 기반을 마련.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">KoNLPy</span><span class="tag">PyTorch</span>
+                    <span class="tag">Hugging Face</span><span class="tag">BERT</span><span class="tag">LDA</span><span class="tag">Tableau</span>
+                </div>
+                 <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-chart-line"></i> Interactive Dashboard</a>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="experience" class="card">
+            <h2><i class="fa-solid fa-briefcase"></i> 업무 경력 (Experience)</h2>
+            <div class="timeline-item">
+                <h3>OOO 회사 - 데이터 사이언티스트</h3>
+                <p class="period">2022년 3월 - 현재</p>
+                <ul>
+                    <li>고객 행동 데이터 분석 및 개인화 추천 시스템 A/B 테스트 설계 및 결과 분석.</li>
+                    <li>매출 예측 시계열 모델(ARIMA, Prophet) 개발 및 운영.</li>
+                    <li>주요 비즈니스 지표(KPI) 대시보드 설계 및 자동화.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>△△△ 회사 - 데이터 분석가 (인턴)</h3>
+                <p class="period">2021년 7월 - 2021년 12월</p>
+                <ul>
+                    <li>SQL을 이용한 데이터 추출 및 전처리, 주간 비즈니스 현황 리포트 작성.</li>
+                    <li>마케팅 캠페인 성과 분석 및 효율 개선안 제안.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="education" class="card">
+            <h2><i class="fa-solid fa-graduation-cap"></i> 학력 및 자격증</h2>
+            <div class="timeline-item">
+                <h3>OO 대학교</h3>
+                <p class="period">2018년 3월 - 2022년 2월</p>
+                <p><strong>통계학과 학사 (컴퓨터공학 부전공)</strong></p>
+                <p>관련 수강 과목: 수리통계학, 회귀분석, 데이터마이닝, 기계학습개론 등</p>
+            </div>
+             <div class="timeline-item">
+                <h3>자격증 및 교육</h3>
+                <p class="period">2023년 5월</p>
+                <p><strong>AWS Certified Machine Learning – Specialty</strong></p>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 . All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
