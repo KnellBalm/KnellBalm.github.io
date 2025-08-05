@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>의 데이터 사이언스 포트폴리오</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* --- 기본 스타일 및 변수 --- */
+        /* --- 🎨 전역 스타일 및 디자인 시스템 --- */
         :root {
-            --primary-color: #2c3e50; /* 네이비 */
-            --secondary-color: #3498db; /* 블루 */
-            --background-color: #f4f7f6;
+            --primary-color: #0d253f;   /* Deep Navy */
+            --secondary-color: #01b4e4; /* Bright Blue */
+            --accent-color: #90cea1;    /* Soft Green */
+            --background-color: #f7f8fc;
             --card-background: #ffffff;
-            --text-color: #333333;
-            --light-gray: #ecf0f1;
-            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --text-color: #333;
+            --text-light: #555;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- 기본 설정 --- */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -26,87 +35,122 @@
             margin: 0;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.8;
+            font-weight: 400;
         }
         
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        h1, h2, h3 {
-            font-family: 'Roboto', sans-serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
             color: var(--primary-color);
+            font-weight: 600;
             margin-top: 0;
         }
         
         h2 {
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         a {
             color: var(--secondary-color);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
 
         a:hover {
             color: var(--primary-color);
+            text-decoration: underline;
         }
 
-        /* --- 헤더 (Hero) 섹션 --- */
+        /* --- 🚀 헤더 (Hero) 섹션 --- */
         .hero {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #1f4287);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
         .hero h1 {
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
         .hero .subtitle {
-            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
             margin-bottom: 20px;
-            color: var(--light-gray);
+            color: var(--accent-color);
+            font-weight: 400;
+        }
+        .hero .summary {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            font-weight: 300;
         }
         .hero .social-links a {
             color: white;
             font-size: 1.8rem;
             margin: 0 15px;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
         .hero .social-links a:hover {
-            transform: scale(1.2);
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            text-decoration: none;
         }
 
-        /* --- 공통 카드 스타일 --- */
+        /* --- 🃏 공통 카드 스타일 --- */
         .card {
             background: var(--card-background);
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
-            padding: 30px;
+            padding: 35px;
             margin-bottom: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-hover);
         }
 
-        /* --- 기술 스택 (Skills) 섹션 --- */
+        /* --- 🛠️ 기술 스택 (Skills) 섹션 --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .skill-category {
+            background-color: #fdfdff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
         .skill-category h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+            margin-bottom: 20px;
         }
         .skill-category ul {
             list-style: none;
@@ -114,84 +158,118 @@
             margin: 0;
         }
         .skill-category li {
-            background-color: var(--light-gray);
-            border-radius: 5px;
-            padding: 8px 12px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            padding: 8px 0;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        .skill-category li i {
+            color: var(--accent-color);
+            margin-right: 10px;
         }
 
-        /* --- 프로젝트 (Projects) 섹션 --- */
+
+        /* --- 🔬 프로젝트 (Projects) 섹션 --- */
         .project-card h3 {
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
         }
         .project-summary {
             font-style: italic;
-            color: #555;
+            color: #666;
             margin-bottom: 20px;
+            font-size: 1.1rem;
         }
         .project-details ul {
             padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .project-details strong {
+            color: var(--primary-color);
         }
         .tags {
-            margin-top: 20px;
+            margin: 20px 0;
         }
         .tag {
             display: inline-block;
+            background-color: #eaf6ff;
+            color: var(--secondary-color);
+            border-radius: 15px;
+            padding: 6px 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        .tag:hover {
             background-color: var(--secondary-color);
             color: white;
-            border-radius: 15px;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
+        }
+        .project-links {
+            margin-top: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
         .project-links a {
-            margin-right: 20px;
-            font-weight: bold;
+            margin-right: 25px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+        .project-links a i {
+            margin-right: 8px;
         }
 
-        /* --- 경력 (Experience) & 학력 (Education) 섹션 --- */
+        /* --- ⏳ 경력 & 학력 (Timeline) 섹션 --- */
+        .timeline {
+            position: relative;
+        }
         .timeline-item {
             position: relative;
-            padding-left: 30px;
-            border-left: 2px solid var(--secondary-color);
+            padding: 10px 0 30px 40px;
+            border-left: 2px solid var(--border-color);
         }
-        .timeline-item:not(:last-child) {
-            padding-bottom: 30px;
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
         }
-        .timeline-item::before {
-            content: '';
+        .timeline-icon {
             position: absolute;
-            left: -9px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
+            left: -14px;
+            top: 10px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background-color: var(--secondary-color);
-            border: 2px solid white;
+            border: 3px solid var(--background-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .timeline-item h3 { margin-bottom: 5px; }
+        .timeline-item h3 { font-size: 1.4rem; margin-bottom: 5px; }
         .timeline-item .period {
-            font-weight: bold;
-            color: #777;
+            font-weight: 600;
+            color: var(--text-light);
             margin-bottom: 10px;
+            font-size: 0.9rem;
         }
         
-        /* --- 푸터 --- */
+        /* --- 👣 푸터 --- */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             margin-top: 40px;
             background-color: var(--primary-color);
-            color: var(--light-gray);
+            color: #aeb9c4;
         }
 
-        /* --- 반응형 디자인 --- */
+        /* --- 📱 반응형 디자인 --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .container { padding: 15px; }
-            .card { padding: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+            h2 { font-size: 1.8rem; }
+            .container { padding: 20px 15px; }
+            .card { padding: 25px; }
         }
     </style>
 </head>
@@ -199,8 +277,8 @@
 
     <header class="hero">
         <h1></h1>
-        <p class="subtitle">데이터를 통해 가치를 창출하는 데이터 사이언티스트</p>
-        <p>비즈니스 문제를 데이터 기반으로 정의하고, 머신러닝과 통계 모델을 활용하여<br>실질적인 비즈니스 임팩트를 만드는 일에 열정을 가지고 있습니다.</p>
+        <p class="subtitle">Data Scientist | Machine Learning Engineer</p>
+        <p class="summary">데이터를 통해 비즈니스 문제를 해결하고, 예측 모델을 구축하여 실질적인 가치를 창출하는 데 열정을 가진 데이터 과학자입니다.</p>
         <div class="social-links">
             <a href="" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -209,155 +287,123 @@
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <section id="skills" class="card">
-            <h2><i class="fa-solid fa-cogs"></i> 기술 스택 (Skills)</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & Data Handling</h3>
-                    <ul>
-                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
-                        <li>R (Dplyr, Ggplot2)</li>
-                        <li>SQL (PostgreSQL, MySQL, BigQuery)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning & Deep Learning</h3>
-                    <ul>
-                        <li>TensorFlow, Keras, PyTorch</li>
-                        <li>XGBoost, LightGBM</li>
-                        <li>NLP (Hugging Face Transformers)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Visualization</h3>
-                    <ul>
-                        <li>Matplotlib, Seaborn, Plotly</li>
-                        <li>Tableau, Looker Studio</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>MLOps & Cloud</h3>
-                    <ul>
-                        <li>Docker, Git, GitHub Actions</li>
-                        <li>AWS (S3, SageMaker, EC2)</li>
-                        <li>GCP (BigQuery, Vertex AI)</li>
-                    </ul>
+        <section id="skills">
+            <h2><i class="fa-solid fa-laptop-code"></i> Skills</h2>
+            <div class="card">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming & Data</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Python (Pandas, NumPy)</li>
+                            <li><i class="fas fa-check"></i> SQL (PostgreSQL, BigQuery)</li>
+                            <li><i class="fas fa-check"></i> R (Dplyr, Ggplot2)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Scikit-learn, XGBoost</li>
+                            <li><i class="fas fa-check"></i> PyTorch, TensorFlow/Keras</li>
+                            <li><i class="fas fa-check"></i> NLP (Hugging Face)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> MLOps & Cloud</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Docker, Git, Airflow</li>
+                            <li><i class="fas fa-check"></i> AWS (SageMaker, S3)</li>
+                            <li><i class="fas fa-check"></i> GCP (Vertex AI)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-
         <section id="projects">
-            <h2><i class="fa-solid fa-flask-vial"></i> 주요 프로젝트 (Projects)</h2>
+            <h2><i class="fa-solid fa-lightbulb"></i> Projects</h2>
             
             <div class="project-card card">
                 <h3>고객 이탈 예측 모델링 및 서빙 시스템 구축</h3>
                 <p class="project-summary">구독 서비스의 고객 이탈 방지를 위해, 머신러닝 모델을 개발하고 배치 서빙 파이프라인을 구축하여 마케팅팀의 타겟 캠페인 효율을 증대시킨 프로젝트</p>
                 <div class="project-details">
                     <ul>
-                        <li><strong>문제 정의:</strong> 월별 고객 이탈률이 증가하여 비즈니스 손실 발생. 이탈 가능성이 높은 고객을 사전에 예측하여 선제적 대응 필요.</li>
-                        <li><strong>데이터:</strong> 고객 인구통계 정보, 서비스 사용 로그, 결제 내역, 고객센터 문의 내역 등 (약 100만 명 데이터)</li>
-                        <li><strong>분석 및 모델링:</strong>
-                            <ul>
-                                <li>EDA를 통해 이탈 그룹과 유지 그룹의 주요 특징 차이 분석 (e.g., 특정 기능 사용 빈도, 결제 주기).</li>
-                                <li>LightGBM과 Logistic Regression 모델 성능 비교, 최종적으로 LightGBM 채택 (AUC 0.88).</li>
-                                <li>SHAP를 활용하여 모델의 예측 결과를 해석하고, 주요 이탈 요인 시각화 및 리포팅.</li>
-                            </ul>
-                        </li>
-                        <li><strong>결과 및 기여:</strong>
-                            <ul>
-                                <li>이탈 예측 모델 기반 타겟 쿠폰 발송 캠페인 진행, 이전 대비 **캠페인 ROI 15% 증가**.</li>
-                                <li>Airflow와 Docker를 이용한 일일 배치 예측 시스템 구축으로 **운영 리소스 자동화**.</li>
-                            </ul>
-                        </li>
+                        <li><strong>문제 정의:</strong> 이탈 가능성이 높은 고객을 사전에 예측하여 선제적 마케팅 액션 필요.</li>
+                        <li><strong>분석 및 모델링:</strong> EDA를 통해 이탈 요인 분석, LightGBM 모델 채택 (AUC 0.88), SHAP를 활용한 모델 결과 해석 및 리포팅.</li>
+                        <li><strong>결과 및 기여:</strong> 예측 기반 타겟 캠페인 진행으로 **캠페인 ROI 15% 증가**, Airflow와 Docker 기반의 **운영 자동화 파이프라인 구축**.</li>
                     </ul>
                 </div>
                 <div class="tags">
-                    <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">LightGBM</span>
-                    <span class="tag">SHAP</span><span class="tag">SQL</span><span class="tag">Airflow</span><span class="tag">Docker</span>
+                    <span class="tag">Python</span><span class="tag">LightGBM</span><span class="tag">SHAP</span><span class="tag">SQL</span><span class="tag">Airflow</span><span class="tag">Docker</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-file-alt"></i> 상세 리포트</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-file-alt"></i> Report</a>
                 </div>
             </div>
 
             <div class="project-card card">
-                <h3>자연어 처리를 이용한 상품 리뷰 긍/부정 분석 및 토픽 모델링</h3>
-                <p class="project-summary">이커머스 사이트의 수십만 개 상품 리뷰 텍스트를 분석하여 상품별 주요 긍/부정 키워드를 추출하고, 고객의 목소리(VOC)를 정량적으로 파악할 수 있는 대시보드를 구축</p>
-                 <div class="project-details">
+                <h3>자연어 처리를 이용한 상품 리뷰 긍/부정 분석</h3>
+                <p class="project-summary">이커머스 사이트의 수십만 개 상품 리뷰를 분석하여 상품별 주요 긍/부정 키워드를 추출하고, 고객의 목소리(VOC)를 정량적으로 파악할 수 있는 대시보드 구축</p>
+                <div class="project-details">
                     <ul>
-                        <li><strong>문제 정의:</strong> 매일 쏟아지는 리뷰를 수동으로 확인하기 어려워 고객 불만 사항에 대한 신속한 대응이 힘든 상황. 리뷰 데이터에서 인사이트를 자동 추출할 필요.</li>
-                        <li><strong>데이터:</strong> 상품 리뷰 텍스트 데이터 (약 50만 건), 별점 데이터.</li>
-                        <li><strong>분석 및 모델링:</strong>
-                            <ul>
-                                <li>KoNLPy를 이용한 한국어 형태소 분석 및 전처리.</li>
-                                <li>BERT 기반의 사전 학습 모델(e.g., KoBERT)을 Fine-tuning하여 긍/부정 분류 모델 개발 (정확도 92%).</li>
-                                <li>LDA(잠재 디리클레 할당) 토픽 모델링을 통해 리뷰의 주요 주제(e.g., '배송', '품질', '가격')를 클러스터링.</li>
-                            </ul>
-                        </li>
-                        <li><strong>결과 및 기여:</strong>
-                            <ul>
-                                <li>Tableau를 이용해 상품별 긍/부정 리뷰 비율, 주요 키워드를 시각화한 **VOC 대시보드 개발**.</li>
-                                <li>상품 기획팀(MD)이 대시보드를 통해 **상품 개선 아이디어 5건 발굴**.</li>
-                                <li>부정 리뷰 급증 상품을 자동 감지하는 알림 시스템의 기반을 마련.</li>
-                            </ul>
-                        </li>
+                        <li><strong>문제 정의:</strong> 수동 리뷰 확인의 한계를 극복하고 고객 불만 사항에 신속 대응.</li>
+                        <li><strong>분석 및 모델링:</strong> KoBERT Fine-tuning 기반 긍/부정 분류 모델 개발 (정확도 92%), LDA 토픽 모델링으로 주요 주제 클러스터링.</li>
+                        <li><strong>결과 및 기여:</strong> Tableau를 이용한 **VOC 대시보드 개발** 및 MD팀 제공, 이를 통해 **상품 개선 아이디어 5건 발굴**.</li>
                     </ul>
                 </div>
                 <div class="tags">
-                    <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">KoNLPy</span><span class="tag">PyTorch</span>
-                    <span class="tag">Hugging Face</span><span class="tag">BERT</span><span class="tag">LDA</span><span class="tag">Tableau</span>
+                    <span class="tag">NLP</span><span class="tag">KoBERT</span><span class="tag">PyTorch</span><span class="tag">LDA</span><span class="tag">Tableau</span>
                 </div>
                  <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-chart-line"></i> Interactive Dashboard</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
                 </div>
             </div>
-
         </section>
 
-
-        <section id="experience" class="card">
-            <h2><i class="fa-solid fa-briefcase"></i> 업무 경력 (Experience)</h2>
-            <div class="timeline-item">
-                <h3>OOO 회사 - 데이터 사이언티스트</h3>
-                <p class="period">2022년 3월 - 현재</p>
-                <ul>
-                    <li>고객 행동 데이터 분석 및 개인화 추천 시스템 A/B 테스트 설계 및 결과 분석.</li>
-                    <li>매출 예측 시계열 모델(ARIMA, Prophet) 개발 및 운영.</li>
-                    <li>주요 비즈니스 지표(KPI) 대시보드 설계 및 자동화.</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>△△△ 회사 - 데이터 분석가 (인턴)</h3>
-                <p class="period">2021년 7월 - 2021년 12월</p>
-                <ul>
-                    <li>SQL을 이용한 데이터 추출 및 전처리, 주간 비즈니스 현황 리포트 작성.</li>
-                    <li>마케팅 캠페인 성과 분석 및 효율 개선안 제안.</li>
-                </ul>
+        <section id="experience">
+            <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+            <div class="card timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-building"></i></div>
+                    <h3>OOO 회사 - 데이터 사이언티스트</h3>
+                    <p class="period">2022년 3월 - 현재</p>
+                    <ul>
+                        <li>고객 행동 데이터 분석 및 개인화 추천 시스템 A/B 테스트 설계 및 결과 분석.</li>
+                        <li>매출 예측 시계열 모델(ARIMA, Prophet) 개발 및 운영.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-building"></i></div>
+                    <h3>△△△ 회사 - 데이터 분석가 (인턴)</h3>
+                    <p class="period">2021년 7월 - 2021년 12월</p>
+                    <ul>
+                        <li>SQL을 이용한 데이터 추출 및 전처리, 주간 비즈니스 현황 리포트 작성.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-
-        <section id="education" class="card">
-            <h2><i class="fa-solid fa-graduation-cap"></i> 학력 및 자격증</h2>
-            <div class="timeline-item">
-                <h3>OO 대학교</h3>
-                <p class="period">2018년 3월 - 2022년 2월</p>
-                <p><strong>통계학과 학사 (컴퓨터공학 부전공)</strong></p>
-                <p>관련 수강 과목: 수리통계학, 회귀분석, 데이터마이닝, 기계학습개론 등</p>
-            </div>
-             <div class="timeline-item">
-                <h3>자격증 및 교육</h3>
-                <p class="period">2023년 5월</p>
-                <p><strong>AWS Certified Machine Learning – Specialty</strong></p>
+        <section id="education">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="card timeline">
+                <div class="timeline-item">
+                     <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <h3>OO 대학교</h3>
+                    <p class="period">2018년 3월 - 2022년 2월</p>
+                    <p><strong>통계학과 학사 (컴퓨터공학 부전공)</strong></p>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>AWS Certified Machine Learning – Specialty</h3>
+                    <p class="period">2023년 5월 취득</p>
+                </div>
             </div>
         </section>
         
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 . All Rights Reserved.</p>
